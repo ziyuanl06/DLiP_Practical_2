@@ -17,8 +17,19 @@ from sklearn import datasets
 
 # Copy and paste the code for that function here:
 # -----------------------------------------------
-def my_mlp:
-    pass  # replace with implementation
+def my_mlp(w, X, sigma=np.tanh):
+    # ...
+    # ... Translate the code from the above R function into Python
+    # ...
+    W1 = np.array(w[0:24]).reshape(4, 6)
+    W2 = np.array(w[24:52]).reshape(7, 4)
+    W3 = np.array(w[52:59]).reshape(1, 7)
+
+    a1 = sigma(W1 @ X)
+    a2 = sigma(W2 @ a1)
+    f = sigma(W3 @ a2)
+    
+    return f
 
 # -----------------------------------------------
 
